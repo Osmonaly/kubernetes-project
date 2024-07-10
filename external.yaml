@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-dns
+  namespace: external-dns  # Замените на ваше пространство имён, если требуется
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: external-dns
+  template:
+    metadata:
+      labels:
+        app: external-dns
+    spec:
+      serviceAccountName: external-dns
+      containers:
+        - name: external-dns
+          image: bitnami/external-dns:v0.10.1  
+          args:
+            - --source=service
+            - --source=ingress
+            - --provider=google
+            - --google-project=instant-bonfire-426007-n2  # Замените на ваш ID проекта GCP
+          volumeMounts:
+            - name: gcp-credentials
+              mountPath: /mnt/secrets/gcp
+              readOnly: true
+      volumes:
+        - name: gcp-credentials
+          secret:
+            secretName: external-dns-gcp-credentials
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: external-dns
+  namespace: external-dns  # Замените на ваше пространство имён, если требуется
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: external-dns-viewer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+  - kind: ServiceAccount
+    name: external-dns
+    namespace: external-dns  # Замените на ваше пространство имён, если требуется
