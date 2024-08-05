@@ -54,12 +54,15 @@
 ### 4. Cloning Repositories
 - Cloned the necessary backend and frontend repositories:
   - [Backend Repository](https://github.com/AntTechLabs/awesome_cats_backend.git)
+    
   - [Frontend Repository](https://github.com/AntTechLabs/awesome_cats_frontend.git)
 
 ### 5. Writing Dockerfiles
 - Created Dockerfiles for both backend and frontend images and pushed them to Google Cloud repositories.
 ![Dockerfile](https://github.com/user-attachments/assets/34df36e7-eb3c-4805-82a8-71126868f12c)
+
 ![Push to GCR](https://github.com/user-attachments/assets/de88f7d0-e97c-4abe-9bd7-f6bd0ede19b2)
+
 ![GCR Push](https://github.com/user-attachments/assets/dfd0192b-cf79-48db-a5af-5e3fc6788619)
 
 ### 6. Writing Deployment YAML Files
@@ -73,6 +76,7 @@
 ### 8. Installing NGINX Controller
 - Installed the NGINX controller with Load Balancer type.
 ![NGINX Controller](https://github.com/user-attachments/assets/a054d9fa-3eca-45ef-b284-8c346934d5c7)
+
 ![Load Balancer](https://github.com/user-attachments/assets/3e726223-92f4-4e83-8003-16e6e5d9e2e5)
 
 ### 9. Accessing the Site
@@ -81,9 +85,12 @@
 
 ### 10. Final Steps
 - Viewed the connection to the database and successful registration and login to the game.
-![Database Connection](https://github.com/user-attachments/assets/a9847184-6f14-4fba-8c0e-b967342337b7)
+![image](https://github.com/user-attachments/assets/0da81002-d32c-4088-a1da-56937b750ba7)
+
 ![Game Login](https://github.com/user-attachments/assets/d7009df7-247e-4fbb-bef2-5c2f7d00a4ef)
-![Multiple Characters](https://github.com/user-attachments/assets/b0d03a65-03c4-48e4-ba64-0b6c460d0cb4)
+
+![Multiple Characters](https://github.com/user-attachments/assets/124ca5a5-287d-4bb9-9987-189c0c45c8db)
+
 
 ### Obtaining SSL Certificate
 - Obtained a certificate using `ClusterIssuer.yaml` and `Certificate.yaml`.
