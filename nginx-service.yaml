@@ -4,7 +4,6 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    # Удаление селектора app: nginx, если не используется
   ports:
     - protocol: TCP
       port: 80

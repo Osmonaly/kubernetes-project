@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: us-central1-docker.pkg.dev/instant-bonfire-426007-n2/final/frontend-image:latest
+          image: us-central1-docker.pkg.dev/instant-bonfire-426007-n2/final/frontend:latest
           ports:
             - containerPort: 80  

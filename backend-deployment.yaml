@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -14,27 +14,28 @@ spec:
     spec:
       containers:
         - name: backend
-          image: us-central1-docker.pkg.dev/instant-bonfire-426007-n2/final/backend-image:latest
+          image: us-central1-docker.pkg.dev/instant-bonfire-426007-n2/final/neeew-backend:latest
           env:
-            - name: POSTGRES_HOST
+            - name: PGHOST
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_HOST
-            - name: POSTGRES_DB
+                  name: db-credentials
+                  key: host
+            - name: PGDATABASE
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_DB
-            - name: POSTGRES_USER
+                  name: db-credentials
+                  key: database
+            - name: PGUSER
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
+                  name: db-credentials
+                  key: username
+            - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_PASSWORD
+                  name: db-credentials
+                  key: password
           ports:
-            - containerPort: 8000  # Adjust the port as per your backend configuration
+            - containerPort: 3000  
+
