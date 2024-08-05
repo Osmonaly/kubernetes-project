@@ -67,7 +67,6 @@
 
 ### 6. Writing Deployment YAML Files
 - Developed YAML files for frontend and backend deployments with detailed descriptions.
-![Deployment YAML](https://github.com/user-attachments/assets/300f3585-ca4f-4172-a446-bae87bcea24b)
 
 ### 7. Creating ClusterIP Services
 - Created ClusterIP services for the deployments.
@@ -77,7 +76,6 @@
 - Installed the NGINX controller with Load Balancer type.
 ![NGINX Controller](https://github.com/user-attachments/assets/a054d9fa-3eca-45ef-b284-8c346934d5c7)
 
-![Load Balancer](https://github.com/user-attachments/assets/3e726223-92f4-4e83-8003-16e6e5d9e2e5)
 
 ### 9. Accessing the Site
 - Opened the site using the pre-purchased DNS name.
