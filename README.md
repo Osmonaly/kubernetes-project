@@ -1,6 +1,5 @@
-**kub**
 
-**For the next project, the following steps were required:**
+                               **For the next project, the following steps were required:**
 
 
 **Create an RDS or CloudSQL instance, connect to your database, and create tables inside the PostgreSQL database.**
